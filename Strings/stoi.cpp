@@ -23,11 +23,7 @@ public:
                 break;
             }
         }
-        if(ans > INT_MAX){
-            return neg ? INT_MIN : INT_MAX;
-        }else{
-            return neg ? -ans : ans;
-        }
+        return neg ? -ans : ans;
         
     }
 };

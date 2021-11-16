@@ -8,7 +8,9 @@ public:
     Node* parent;
 };
 */
-
+ /*
+Approach 1 : Finding the root first and making the recursive calls to the left and right subtrees.
+ */
 class Solution {
 public:
     
