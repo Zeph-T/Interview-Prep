@@ -1,3 +1,9 @@
+
+/*
+TC O(N)
+SC O(N)
+*/
+
 class Solution {
 public:
     int compress(vector<char>& chars) {
@@ -6,7 +12,7 @@ public:
             if(st.empty()){
                 st.push({ch , 1});
             }else{
-                if(st.top().first == ch){
+           1     if(st.top().first == ch){
                     auto top = st.top();
                     st.pop();
                     st.push({top.first , top.second + 1});
@@ -50,5 +56,42 @@ public:
             }
         }
         return ans;
+    }
+};
+
+
+/*
+
+TC O(N)
+SC O(1)
+*/
+
+class Solution {
+public:
+    int compress(vector<char>& chars) {
+        int start = 0;
+        int n = chars.size();
+        int ptr = 0;
+        for(int start = 0;start<n;){
+            int j = start;
+            int count = 1;
+            while(j<n-1 and chars[j] == chars[j+1]){
+                j++;
+                count++;
+            }
+            
+            if(count == 1) chars[ptr++] = chars[start];
+            else{
+                chars[ptr++] = chars[start];
+                string count_string = to_string(count);
+                int len = 0;
+                while(len < count_string.size()){
+                    chars[ptr++] = count_string[len++];
+                }
+            }
+            
+            start = j + 1;
+        }
+        return ptr;
     }
 };
