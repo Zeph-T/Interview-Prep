@@ -34,6 +34,7 @@ public:
                 root->next->random = NULL;
             root = root->next->next;
         }
+        
         root = head;
         Node* sHead = new Node(0); // new Head
         Node* copy = sHead;
