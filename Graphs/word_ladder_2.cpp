@@ -1,3 +1,12 @@
+
+/*
+Time Complexity : Since we are traversing all the strings and udpating the character of each string with all 26 possibilities
+it will be O(N * K * 26)
+The additional K can occur for other languages for lookup in words, but since we are using a set
+we can reduce the complixity by K
+
+*/
+
 class Solution {
 public:
     vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) {
