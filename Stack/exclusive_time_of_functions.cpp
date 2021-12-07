@@ -8,7 +8,7 @@ public:
             stringstream str(log);
             string id,state,time;
             getline(str,id,':');getline(str,state,':');getline(str,time,':');
-            if(state == "start")st.push({stoi(id) , stoi(time) , 0}); // if there is a new function, just push
+            if(state == "start")st.push({stoi(id) , stoi(time) , 0}); // if there is a new function, just push P.S 0 indicates the time taken by their child process
             else{
                 auto x = st.top();
                 st.pop(); // if there is a end state, it means the function which is at the top of the stack
